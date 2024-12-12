@@ -106,7 +106,7 @@ const Home = () => {
             className="mr-3 ml-1"
           />
           <TextInput
-            className="flex-1 text-lg text-gray-800 font-pmedium"
+            className="flex-row items-center text-lg text-gray-800 font-pmedium"
             placeholder="Where to?"
             placeholderTextColor="#6b7280"
             value={inputValue}
