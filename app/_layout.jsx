@@ -44,6 +44,20 @@ const RootLayout = () => {
       <Stack.Screen name='(tabs)' options={{
         headerShown: false,
       }} />
+      <Stack.Screen name='routescreen' options={{
+        headerTitle: 'Available Routes',
+        headerTitleAlign: 'center',
+        headerStyle: {
+          height: 80,
+        },
+      }} />
+      <Stack.Screen name='mapscreen' options={{
+        headerTitle: 'Your Route',
+        headerTitleAlign: 'center',
+        headerStyle: {
+          height: 80,
+        },
+      }} />
     </Stack>
   )
 }

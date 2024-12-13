@@ -151,26 +151,51 @@ const RoutesScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container} className = "mb-3">
+    <ScrollView className="flex-1 bg-gray-100 p-4">
+
       {/* Tabs */}
-      <View style={styles.tabsContainer}>
+      <View className="flex-row justify-around mt-2 mb-2 pb-2">
         <TouchableOpacity
           onPress={() => setSelectedTab("quickest")}
-          style={[styles.tabButton, selectedTab === "quickest" && styles.activeTab]}
+          className={`px-4 py-2 rounded-full ${
+            selectedTab === "quickest" ? "bg-emerald-700" : "bg-gray-200"
+          }`}
         >
-          <Text style={[styles.tabText, selectedTab === "quickest" && styles.activeTabText]}>Quickest</Text>
+          <Text
+            className={`text-base font-semibold ${
+              selectedTab === "quickest" ? "text-white" : "text-gray-700"
+            }`}
+          >
+            Quickest
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setSelectedTab("cheapest")}
-          style={[styles.tabButton, selectedTab === "cheapest" && styles.activeTab]}
+          className={`px-4 py-2 rounded-full ${
+            selectedTab === "cheapest" ? "bg-emerald-700" : "bg-gray-200"
+          }`}
         >
-          <Text style={[styles.tabText, selectedTab === "cheapest" && styles.activeTabText]}>Cheapest</Text>
+          <Text
+            className={`text-base font-semibold ${
+              selectedTab === "cheapest" ? "text-white" : "text-gray-700"
+            }`}
+          >
+            Cheapest
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setSelectedTab("greenest")}
-          style={[styles.tabButton, selectedTab === "greenest" && styles.activeTab]}
+          className={`px-4 py-2 rounded-full ${
+            selectedTab === "greenest" ? "bg-emerald-700" : "bg-gray-200"
+          }`}
         >
-          <Text style={[styles.tabText, selectedTab === "greenest" && styles.activeTabText]}>Greenest</Text>
+          <Text
+            className={`text-base font-semibold ${
+              selectedTab === "greenest" ? "text-white" : "text-gray-700"
+            }`}
+          >
+            Greenest
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -180,42 +205,11 @@ const RoutesScreen = () => {
           key={route.id}
           route={route}
           onPress={() => navigation.push("mapscreen", { routeId: route.id })}
+          className="bg-white p-4 mb-4 rounded-xl shadow-md"
         />
       ))}
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: "#f5f5f5",
-  },
-  tabsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    marginBottom: 16,
-    borderBottomWidth: 1,
-    borderColor: "#ddd",
-    paddingBottom: 8,
-  },
-  tabButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-  },
-  activeTab: {
-    borderBottomWidth: 2,
-    borderColor: "#32CD32", // Active tab border color
-  },
-  tabText: {
-    fontSize: 16,
-    color: "#555",
-  },
-  activeTabText: {
-    color: "#32CD32", // Active tab text color
-    fontWeight: "bold",
-  },
-});
 
 export default RoutesScreen;
