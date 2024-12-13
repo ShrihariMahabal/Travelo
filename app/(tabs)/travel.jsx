@@ -4,11 +4,14 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  TouchableHighlight
 } from "react-native";
 import React, { useState } from "react";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from '@react-navigation/native';
+
 
 const INITIAL_REGION = {
   latitude: 19.184340410502568,
@@ -107,6 +110,7 @@ const MINIMAL_MAP_STYLE = [
 ];
 
 const Travel = () => {
+  const navigation = useNavigation();
   const [fromLocation, setFromLocation] = useState("");
   const [toLocation, setToLocation] = useState("");
 
@@ -116,7 +120,7 @@ const Travel = () => {
         {/* MapView remains in the background */}
         <MapView
           style={StyleSheet.absoluteFill}
-          provider={PROVIDER_GOOGLE}
+          // provider={PROVIDER_GOOGLE}
           initialRegion={INITIAL_REGION}
           showsUserLocation
           showsMyLocationButton
@@ -176,15 +180,18 @@ const Travel = () => {
           </View>
 
           {/* Search Button */}
-          <TouchableOpacity
+          <TouchableHighlight
             className="bg-emerald-800 rounded-lg py-3 flex-row items-center justify-center"
             onPress={() => {
               console.log("Searching from", fromLocation, "to", toLocation);
+              navigation.navigate('routescreen');
             }}
           >
+            <>
             <MaterialIcons name="search" size={20} color="#fff" />
             <Text className="text-white font-bold text-base ml-2">Search</Text>
-          </TouchableOpacity>
+            </>
+          </TouchableHighlight>
         </View>
       </View>
     </SafeAreaView>

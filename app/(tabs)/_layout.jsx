@@ -29,7 +29,7 @@ export default function Layout() {
             marginBottom: 8, // More space between icon and label
           },
           tabBarInactiveTintColor: "#8e8e93",
-          tabBarActiveTintColor: "#000000",
+          tabBarActiveTintColor: "#065f46",
           tabBarItemStyle: {
             marginHorizontal: 10, // Added horizontal spacing between tabs
           },
