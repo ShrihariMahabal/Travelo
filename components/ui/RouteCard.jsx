@@ -14,11 +14,11 @@ const calculateEndTime = (startTime, totalTimeInMinutes) => {
 
 const RouteCard = ({ route, onPress, startTime = "11:30" }) => {
   const endTime = calculateEndTime(startTime, route.totalTime);
-  const greenColor = "#32CD32";
+  const greenColor = "#065f46";
 
   return (
     <TouchableHighlight
-      className="bg-white p-4 my-5 rounded-lg border shadow-sm border-gray-200"
+      className="bg-white p-4 my-2 rounded-lg border shadow-sm border-gray-200"
       onPress={onPress} underlayColor="#f0f0f0"
     >
       {/* Route Name
@@ -74,8 +74,8 @@ const RouteCard = ({ route, onPress, startTime = "11:30" }) => {
 
         {/* Cost Section */}
         <View className="flex-row items-center justify-between my-2 ">
-          <Text className="text-sm text-gray-700">Fare</Text>
-          <Text className="text-green-600 font-bold">₹{route.totalCost}</Text>
+          <Text className="text-md text-gray-700">Fare</Text>
+          <Text className="text-emerald-800 font-bold">₹{route.totalCost}</Text>
         </View>
       </View>
       </>

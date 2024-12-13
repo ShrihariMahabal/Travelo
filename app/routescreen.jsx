@@ -151,7 +151,7 @@ const RoutesScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} className = "mb-3">
       {/* Tabs */}
       <View style={styles.tabsContainer}>
         <TouchableOpacity

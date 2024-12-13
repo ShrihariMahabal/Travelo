@@ -120,7 +120,7 @@ const Travel = () => {
         {/* MapView remains in the background */}
         <MapView
           style={StyleSheet.absoluteFill}
-          provider={PROVIDER_GOOGLE}
+          // provider={PROVIDER_GOOGLE}
           initialRegion={INITIAL_REGION}
           showsUserLocation
           showsMyLocationButton
