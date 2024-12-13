@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
+import { router } from "expo-router";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -103,21 +104,24 @@ const Home = () => {
                 </View>
               )}
               {index === 1 && (
-                /*Search Section*/ <View className="flex-row items-center bg-gray-100 rounded-full px-4 py-2 mt-4">
-                  <FontAwesome5
-                    name="search"
-                    size={18}
-                    color="#6b7280"
-                    className="mr-3 ml-1"
-                  />
-                  <TextInput
-                    className="text-lg text-gray-800 font-pmedium my-[1px] w-full h-full"
-                    placeholder="Where to?"
-                    placeholderTextColor="#6b7280"
-                    value={inputValue}
-                    onChangeText={(text) => setInputValue(text)}
-                  />
-                </View>
+                /*Search Section*/
+                <TouchableHighlight
+                  className="flex-row items-center bg-gray-100 rounded-full px-4 py-4 mt-4"
+                  underlayColor="#e5e7eb" // Subtle highlight effect on press
+                  onPress={() => router.push("/travel")} // Navigate to /travel
+                >
+                  <View className="flex-row items-center w-full">
+                    <FontAwesome5
+                      name="search"
+                      size={18}
+                      color="#6b7280"
+                      className="mr-3 ml-1"
+                    />
+                    <Text className="text-lg text-gray-800 font-pmedium my-[1px]">
+                      Where to?
+                    </Text>
+                  </View>
+                </TouchableHighlight>
               )}
               {index === 2 && (
                 /*Past Locations Section*/ <FlatList
