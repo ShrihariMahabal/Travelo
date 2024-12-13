@@ -90,7 +90,7 @@ const Home = () => {
   }, [currentIndex]);
 
   return (
-    <SafeAreaView className="min-h-full bg-white px-4 pt-8">
+    <SafeAreaView className="min-h-full bg-background px-4 pt-8">
       <FlatList
         className=""
         data={[1, 1, 1, 1, 1, 1]}
@@ -111,7 +111,7 @@ const Home = () => {
                     className="mr-3 ml-1"
                   />
                   <TextInput
-                    className="flex-row items-center text-lg text-gray-800 font-pmedium"
+                    className="text-lg text-gray-800 font-pmedium my-[1px] w-full h-full"
                     placeholder="Where to?"
                     placeholderTextColor="#6b7280"
                     value={inputValue}
@@ -130,7 +130,7 @@ const Home = () => {
                       onPress={() => {}} // Add navigation logic
                       className="rounded-lg overflow-hidden"
                     >
-                      <View className="flex-row items-center bg-white p-3 rounded-lg shadow-md shadow-gray-400">
+                      <View className="flex-row items-center bg-background p-3 rounded-lg shadow-md shadow-gray-400">
                         <MaterialIcons
                           name="location-on"
                           size={28}
@@ -161,7 +161,7 @@ const Home = () => {
                     {rideOptions.map((option) => (
                       <TouchableHighlight
                         key={option.id}
-                        className="flex-1 items-center justify-center p-4 rounded-lg bg-green-50 mx-2 shadow-md"
+                        className="flex-1 items-center justify-center p-4 rounded-lg bg-gray-100 mx-2 shadow-sm"
                         underlayColor="#d1fae5" // Highlight color on press
                         onPress={() => {}}
                       >
