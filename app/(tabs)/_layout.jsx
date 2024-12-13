@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { StatusBar } from 'expo-status-bar'
+import { StatusBar } from "expo-status-bar";
 
 export default function Layout() {
   return (
@@ -57,6 +57,17 @@ export default function Layout() {
               <Ionicons name="airplane" color={color} size={24} />
             ),
             tabBarLabel: "Travel",
+            headerShown: true,
+            headerTitle: "Where To?",
+            headerTitleAlign: "center",
+            headerStyle: {
+              backgroundColor: "#fff",
+              height: 80,
+            },
+            headerTitleStyle: {
+              fontWeight: "bold",
+              fontSize: 18,
+            },
           }}
         />
 
@@ -71,7 +82,7 @@ export default function Layout() {
           }}
         />
       </Tabs>
-      <StatusBar backgroundColor='#ffffff' style='dark' />
+      <StatusBar backgroundColor="#ffffff" style="dark" />
     </>
   );
 }

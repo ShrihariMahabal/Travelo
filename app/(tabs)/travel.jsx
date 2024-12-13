@@ -42,22 +42,22 @@ const MINIMAL_MAP_STYLE = [
   {
     featureType: "poi",
     elementType: "geometry",
-    stylers: [{ color: "#eeeeee" }],
+    stylers: [{ color: "#e8f5e9" }], // Light green for POIs
   },
   {
     featureType: "poi",
     elementType: "labels.text.fill",
-    stylers: [{ color: "#757575" }],
+    stylers: [{ color: "#2e7d32" }], // Darker green for POI labels
   },
   {
     featureType: "poi.park",
     elementType: "geometry",
-    stylers: [{ color: "#e5e5e5" }],
+    stylers: [{ color: "#c8e6c9" }], // Softer green for parks
   },
   {
     featureType: "poi.park",
     elementType: "labels.text.fill",
-    stylers: [{ color: "#9e9e9e" }],
+    stylers: [{ color: "#388e3c" }], // Vibrant green for park labels
   },
   {
     featureType: "road",
@@ -97,12 +97,12 @@ const MINIMAL_MAP_STYLE = [
   {
     featureType: "water",
     elementType: "geometry",
-    stylers: [{ color: "#c9c9c9" }],
+    stylers: [{ color: "#b3e5fc" }], // Light blue for water
   },
   {
     featureType: "water",
     elementType: "labels.text.fill",
-    stylers: [{ color: "#9e9e9e" }],
+    stylers: [{ color: "#0288d1" }], // Blue for water labels
   },
 ];
 
@@ -111,8 +111,8 @@ const Travel = () => {
   const [toLocation, setToLocation] = useState("");
 
   return (
-    <SafeAreaView className="min-h-full bg-background">
-      <View className="h-full w-full">
+    <SafeAreaView className="flex-1 bg-background">
+      <View style={StyleSheet.absoluteFill}>
         {/* MapView remains in the background */}
         <MapView
           style={StyleSheet.absoluteFill}
@@ -138,15 +138,15 @@ const Travel = () => {
             <View className="flex-row items-center border border-gray-300 rounded-lg px-3 py-2">
               <MaterialIcons
                 name="location-on"
-                size={24} // Adjusted to match the "To" section
-                color="#000"
+                size={24}
+                color="#065f46"
                 className="mr-3"
               />
               <TextInput
                 placeholder="Enter starting location"
                 value={fromLocation}
                 onChangeText={setFromLocation}
-                className="flex-1 text-gray-800 text-base font-pmedium" // Increased font size for better readability
+                className="flex-1 text-gray-800 text-base font-pmedium"
               />
             </View>
           </View>
@@ -162,22 +162,22 @@ const Travel = () => {
             <View className="flex-row items-center border border-gray-300 rounded-lg px-3 py-2">
               <MaterialIcons
                 name="location-on"
-                size={24} // Adjusted to match the "From" section
-                color="#000"
+                size={24}
+                color="#065f46"
                 className="mr-3"
               />
               <TextInput
                 placeholder="Enter destination"
                 value={toLocation}
                 onChangeText={setToLocation}
-                className="flex-1 text-gray-800 text-base font-pmedium" // Increased font size for better readability
+                className="flex-1 text-gray-800 text-base font-pmedium"
               />
             </View>
           </View>
 
           {/* Search Button */}
           <TouchableOpacity
-            className="bg-black rounded-lg py-3 flex-row items-center justify-center"
+            className="bg-emerald-800 rounded-lg py-3 flex-row items-center justify-center"
             onPress={() => {
               console.log("Searching from", fromLocation, "to", toLocation);
             }}

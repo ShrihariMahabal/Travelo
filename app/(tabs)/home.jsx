@@ -162,16 +162,16 @@ const Home = () => {
                       <TouchableHighlight
                         key={option.id}
                         className="flex-1 items-center justify-center p-4 rounded-lg bg-gray-100 mx-2 shadow-sm"
-                        underlayColor="#d1fae5" // Highlight color on press
+                        underlayColor="#d1d5db" // Highlight color on press
                         onPress={() => {}}
                       >
                         <>
                           <FontAwesome5
                             name={option.icon}
                             size={24}
-                            color="#10B981"
+                            color="#065f46"
                           />
-                          <Text className="mt-2 font-pmedium text-[#10B981]">
+                          <Text className="mt-2 font-pmedium text-emerald-800">
                             {option.name}
                           </Text>
                         </>
