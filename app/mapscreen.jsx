@@ -732,7 +732,7 @@ const mapscreen = () => {
     initialRegion={INITIAL_REGION}
   >
     {route.steps.map((step, stepIndex) => (
-      <>
+      <React.Fragment key={`step-${stepIndex}`}>
         {/* Polyline for each step */}
         <Polyline
           key={`polyline-${stepIndex}`} // Ensure the key is unique for each Polyline
@@ -760,7 +760,7 @@ const mapscreen = () => {
             description={step.description}
           />
         ) : null}
-      </>
+      </React.Fragment>
     ))}
   </MapView>
 </View>

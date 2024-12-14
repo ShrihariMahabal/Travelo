@@ -8,7 +8,7 @@ const RoutesScreen = () => {
   const navigation = useNavigation();
   
   // State to store selected filter (Quickest, Cheapest, Greenest)
-  const [selectedTab, setSelectedTab] = useState("quickest");
+  const [selectedTab, setSelectedTab] = useState("greenest");
 
   const routes = [
     {
@@ -543,6 +543,9 @@ const RoutesScreen = () => {
   ];
 
   // Sorting functions
+  const sortByGreenest = () => {
+    return routes.sort((a, b) => b.carbonSavings - a.carbonSavings);
+  };
   const sortByQuickest = () => {
     return routes.sort((a, b) => a.totalTime - b.totalTime);
   };
@@ -551,19 +554,18 @@ const RoutesScreen = () => {
     return routes.sort((a, b) => a.totalCost - b.totalCost);
   };
 
-  const sortByGreenest = () => {
-    return routes.sort((a, b) => b.carbonSavings - a.carbonSavings);
-  };
+  
 
   // Get sorted routes based on selected tab
   const getSortedRoutes = () => {
     switch (selectedTab) {
+      case "greenest":
+        return sortByGreenest();
       case "quickest":
         return sortByQuickest();
       case "cheapest":
         return sortByCheapest();
-      case "greenest":
-        return sortByGreenest();
+      
       default:
         return routes;
     }
@@ -574,6 +576,20 @@ const RoutesScreen = () => {
 
       {/* Tabs */}
       <View className="flex-row justify-around mt-2 mb-2 pb-2">
+      <TouchableOpacity
+          onPress={() => setSelectedTab("greenest")}
+          className={`px-4 py-2 rounded-full ${
+            selectedTab === "greenest" ? "bg-emerald-700" : "bg-gray-200"
+          }`}
+        >
+          <Text
+            className={`text-base font-semibold ${
+              selectedTab === "greenest" ? "text-white" : "text-gray-700"
+            }`}
+          >
+            Greenest
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setSelectedTab("quickest")}
           className={`px-4 py-2 rounded-full ${
@@ -602,20 +618,7 @@ const RoutesScreen = () => {
             Cheapest
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => setSelectedTab("greenest")}
-          className={`px-4 py-2 rounded-full ${
-            selectedTab === "greenest" ? "bg-emerald-700" : "bg-gray-200"
-          }`}
-        >
-          <Text
-            className={`text-base font-semibold ${
-              selectedTab === "greenest" ? "text-white" : "text-gray-700"
-            }`}
-          >
-            Greenest
-          </Text>
-        </TouchableOpacity>
+        
       </View>
 
       {/* Route Cards */}
