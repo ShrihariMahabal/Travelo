@@ -8,7 +8,7 @@ const CarbonSave = ({value}) => {
         <FontAwesome5 name="leaf" size={16} color="#16a34a" className="mr-2" />
         <View>
             <Text className="text-xs font-medium text-green-600">Carbon Save</Text>
-            <Text className="text-md font-bold text-green-600">{value ? `${value} gram` : 'N/A'}</Text>
+            <Text className="text-md font-bold text-green-600">{value ? `${value} kg` : 'N/A'}</Text>
         </View>
         </View>
     );

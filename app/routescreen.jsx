@@ -16,7 +16,7 @@ const RoutesScreen = () => {
       name: "Route 1",
       description: "Rickshaw, Train, Metro, Walk",
       totalTime: 59,
-      carbonSavings: 2.3,
+      carbonSavings: 3.9,
       totalCost: 100,
       steps: [
         {
@@ -152,7 +152,7 @@ const RoutesScreen = () => {
       name: "Route 2",
       description: "Rickshaw, Train, Train, Rickshaw",
       totalTime: 78,
-      carbonSavings: 1.8,
+      carbonSavings: 3.93,
       totalCost: 150,
       steps: [
         {
@@ -320,7 +320,7 @@ const RoutesScreen = () => {
       name: "Route 3",
       description: "Walk, Bus, Rickshaw",
       totalTime: 78,
-      carbonSavings: 3.1,
+      carbonSavings: 2.1,
       totalCost: 80,
       steps: [
         {
@@ -367,7 +367,7 @@ const RoutesScreen = () => {
       name: "Route 4",
       description: "Rickshaw, Metro, Walk",
       totalTime: 58,
-      carbonSavings: 2.5,
+      carbonSavings: 2.95,
       totalCost: 120,
       steps: [
         {
@@ -468,7 +468,7 @@ const RoutesScreen = () => {
       name: "Route 5",
       description: "Direct Cab",
       totalTime: 59,
-      carbonSavings: 0.5,
+      carbonSavings: 0.001,
       totalCost: 500,
       steps: [
         {
