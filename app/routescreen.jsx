@@ -375,6 +375,7 @@ const RoutesScreen = () => {
           description: "29 min",
           mode: "rickshaw",
           coordinates: [
+        
             { latitude: 19.184221839533937, longitude: 72.96247515806687 },
             { latitude: 19.184230668245505, longitude: 72.962278853956 },
             { latitude: 19.183409596973252, longitude: 72.9628303750189 },
@@ -398,7 +399,9 @@ const RoutesScreen = () => {
             { latitude: 19.091129279810552, longitude: 72.91404152759375 },
             { latitude: 19.09204997009917, longitude: 72.91157600633629 },
             { latitude: 19.08926909398714, longitude: 72.90789760743651 },
-            { latitude: 19.087765898274885, longitude: 72.9079771403803 }
+
+
+
           ]
           ,
         },

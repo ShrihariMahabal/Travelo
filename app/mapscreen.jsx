@@ -129,6 +129,7 @@ const mapscreen = () => {
       totalCost: 100,
       steps: [
         {
+          start: "Teen Hath Naka",
           icon: <FontAwesome5 name="taxi" size={24} color="#FFA500" />, // Rickshaw
           description: "10 min",
           mode: "rickshaw",
@@ -154,6 +155,7 @@ const mapscreen = () => {
           ,
         },
         {
+          start: "Thane Station",
           icon: <MaterialIcons name="train" size={24} color="#32CD32" />, // Train
           description: "20 min",
           mode: "train",
@@ -199,6 +201,7 @@ const mapscreen = () => {
           ],
         },
         {
+          start: "Ghatkopar Station",
           icon: <MaterialIcons name="tram" size={24} color="#0000FF" />, // Metro
           description: "22 min",
           mode: "metro",
@@ -240,6 +243,7 @@ const mapscreen = () => {
           ,
         },
         {
+          start: "Azad Nagar Metro Station",
           icon: <FontAwesome5 name="walking" size={24} color="#FFA500" />, // Walk
           description: "7 min",
           mode: "walking",
@@ -265,6 +269,7 @@ const mapscreen = () => {
       totalCost: 150,
       steps: [
         {
+          start: "Teen Hath Naka",
           icon: <FontAwesome5 name="taxi" size={24} color="#FFA500" />,
           description: "10 min",
           mode: "rickshaw",
@@ -289,6 +294,7 @@ const mapscreen = () => {
           ],
         },
         {
+          start: "Thane Station",
           icon: <MaterialIcons name="train" size={24} color="#32CD32" />,
           description: "35 min",
           mode: "train",
@@ -372,6 +378,7 @@ const mapscreen = () => {
           ],
         },
         {
+          start: "Dadar Station",
           icon: <MaterialIcons name="train" size={24} color="#32CD32" />,
           description: "24 min",
           mode: "train",
@@ -399,6 +406,7 @@ const mapscreen = () => {
           ,
         },
         {
+          start: "Andheri Station",
           icon: <FontAwesome5 name="taxi" size={24} color="#FFA500" />,
           description: "9 min",
           mode: "rickshaw",
@@ -433,6 +441,7 @@ const mapscreen = () => {
       totalCost: 80,
       steps: [
         {
+          start: "Teen Hath Naka",
           icon: <FontAwesome5 name="walking" size={24} color="#FFA500" />,
           description: "10 min",
           mode: "walking",
@@ -454,6 +463,7 @@ const mapscreen = () => {
           ],
         },
         {
+          start: "Teen Hath Naka Bus Stop",
           icon: <FontAwesome5 name="bus" size={24} color="#32CD32" />,
           description: "58 min",
           mode: "bus",
@@ -515,6 +525,7 @@ const mapscreen = () => {
           ],
         },
         {
+          start: "Azad Nagar Bus Stop",
           icon: <FontAwesome5 name="taxi" size={24} color="#FFA500" />,
           description: "10 min",
           mode: "rickshaw",
@@ -537,20 +548,45 @@ const mapscreen = () => {
       totalCost: 120,
       steps: [
         {
+          start: "Teen Hath Naka",
           icon: <FontAwesome5 name="taxi" size={24} color="#FFA500" />,
           description: "29 min",
           mode: "rickshaw",
           coordinates: [
-            { latitude: 19.18434, longitude: 72.96341 },
-            { latitude: 19.21500, longitude: 72.97000 },
+            { latitude: 19.184221839533937, longitude: 72.96247515806687 },
+            { latitude: 19.184230668245505, longitude: 72.962278853956 },
+            { latitude: 19.183409596973252, longitude: 72.9628303750189 },
+            { latitude: 19.183595000521592, longitude: 72.96496167675355 },
+            { latitude: 19.186155313907427, longitude: 72.96404559095537 },
+            { latitude: 19.18792985257481, longitude: 72.96366233055572 },
+            { latitude: 19.18504290678192, longitude: 72.96484950301317 },
+            { latitude: 19.18030184918857, longitude: 72.96673776171994 },
+            { latitude: 19.17791237082114, longitude: 72.96784563907393 },
+            { latitude: 19.174742714921837, longitude: 72.9686402033382 },
+            { latitude: 19.17443369224867, longitude: 72.96864020332576 },
+            { latitude: 19.17172309743166, longitude: 72.96819150822373 },
+            { latitude: 19.17067239878534, longitude: 72.96788303027782 },
+            { latitude: 19.15553806425104, longitude: 72.95767521617095 },
+            { latitude: 19.12702266229919, longitude: 72.93994895062487 },
+            { latitude: 19.087912216829373, longitude: 72.92383658427808 },
+            { latitude: 19.086901554558136, longitude: 72.92356559805857 },
+            { latitude: 19.088028958493382, longitude: 72.91801817492572 },
+            { latitude: 19.089344253398174, longitude: 72.91682518076888 },
+            { latitude: 19.089926737803317, longitude: 72.91543335425257 },
+            { latitude: 19.091129279810552, longitude: 72.91404152759375 },
+            { latitude: 19.09204997009917, longitude: 72.91157600633629 },
+            { latitude: 19.08926909398714, longitude: 72.90789760743651 },
+            // { latitude: 19.087765898274885, longitude: 72.9079771403803 }
+          
           ],
         },
         {
+          start: "Ghatkopar Metro Station",
           icon: <MaterialIcons name="tram" size={24} color="#0000FF" />,
           description: "22 min",
           mode: "metro",
           coordinates: [
-            { latitude: 19.086769924067397, longitude: 72.90807468738724 },
+            // { latitude: 19.086769924067397, longitude: 72.90807468738724 },
             { latitude: 19.089307076186884, longitude: 72.90784294466485 },
             { latitude: 19.090607622594348, longitude: 72.90772515154734 },
             { latitude: 19.090837046796935, longitude: 72.90765126306546 },
@@ -587,6 +623,7 @@ const mapscreen = () => {
           ,
         },
         {
+          start: "Azad Nagar Metro Station",
           icon: <FontAwesome5 name="walking" size={24} color="#FFA500" />,
           description: "7 min",
           mode: "walking",
@@ -612,6 +649,7 @@ const mapscreen = () => {
       totalCost: 500,
       steps: [
         {
+          start: "Teen Hath Naka",
           icon: <FontAwesome5 name="taxi" size={24} color="#FFA500" />,
           description: "59 min",
           mode: "cab",
@@ -684,41 +722,49 @@ const mapscreen = () => {
   
   const { id, name, description} = useLocalSearchParams();
   const route = routes[id-1];
-  console.log(route);
+  // console.log(route);
   return (
     <SafeAreaView className="flex h-full bg-background">
   
-      <View style={StyleSheet.absoluteFill}>
-      <MapView
-      // provider={PROVIDER_GOOGLE}
-      style={StyleSheet.absoluteFillObject}
-      initialRegion={INITIAL_REGION}
-    >
-      {route.steps.map((step, stepIndex) => (
+  <View style={StyleSheet.absoluteFill}>
+  <MapView
+    style={StyleSheet.absoluteFillObject}
+    initialRegion={INITIAL_REGION}
+  >
+    {route.steps.map((step, stepIndex) => (
+      <>
+        {/* Polyline for each step */}
         <Polyline
-          key={stepIndex}
+          key={`polyline-${stepIndex}`} // Ensure the key is unique for each Polyline
           coordinates={step.coordinates}
           strokeColor={MODE_COLORS[step.mode]} // Use color based on mode
           strokeWidth={4}
         />
-      ))}
 
-      {/* Add markers for start and end points */}
-       <Marker
-        coordinate={route.steps[0].coordinates[0]}
-        title="Start"
-        description={name}
-      />
-      <Marker
-        coordinate={
-          route.steps[route.steps.length - 1].coordinates.slice(-1)[0]
-        }
-        title="End"
-        description={name}
-      />
-    </MapView>
+        {/* Start Marker */}
+        <Marker
+          key={`start-${stepIndex}`} // Ensure the key is unique for each Start Marker
+          coordinate={step.coordinates[0]}
+          pinColor={stepIndex === 0 ? 'red' : '#89CFF0'} // First step: red, else #f0f0f0
+          title={`${step.start}`}
+          description={step.description}
+        />
 
-      </View>
+        {/* End Marker for the last step */}
+        {stepIndex === route.steps.length - 1 ? (
+          <Marker
+            key={`end-${stepIndex}`} // Ensure the key is unique for each End Marker
+            coordinate={step.coordinates[step.coordinates.length - 1]}
+            pinColor="red"  // End of last step: red
+            title={"Sardar Patel Institute of Technology"}
+            description={step.description}
+          />
+        ) : null}
+      </>
+    ))}
+  </MapView>
+</View>
+
     </SafeAreaView>
   );
 };
