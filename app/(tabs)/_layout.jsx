@@ -82,7 +82,7 @@ export default function Layout() {
           }}
         />
       </Tabs>
-      <StatusBar backgroundColor="#ffffff" style="dark" />
+      <StatusBar backgroundColor="#fcfcfc" style="dark" />
     </>
   );
 }
