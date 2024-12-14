@@ -1,6 +1,8 @@
 import React from "react";
 import { TouchableHighlight, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import {router} from "expo-router";
 
 const calculateEndTime = (startTime, totalTimeInMinutes) => {
   const [hours, minutes] = startTime.split(":").map(Number);
@@ -18,9 +20,20 @@ const RouteCard = ({ route, onPress, startTime = "11:30" }) => {
 
   return (
     <TouchableHighlight
-      className="bg-white p-4 my-3 rounded-xl border border-gray-300 shadow-md"
-      onPress={onPress}
-      underlayColor="#f8f9fa"
+      className="bg-white p-4 my-2 rounded-lg border shadow-sm border-gray-200"
+      onPress= {() => router.push({
+          pathname: "/mapscreen", 
+          params: {
+          id: route.id,
+          name: route.name,
+          description: route.description,
+          totalTime: route.totalTime,
+          carbonSavings: route.carbonSavings,
+          totalCost: route.totalCost,
+          steps: route.steps
+         }})}
+
+       underlayColor="#f0f0f0"
     >
       <>
         {/* Steps Section */}
