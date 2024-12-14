@@ -27,10 +27,6 @@ const RouteCard = ({ route, onPress, startTime = "11:30" }) => {
           id: route.id,
           name: route.name,
           description: route.description,
-          totalTime: route.totalTime,
-          carbonSavings: route.carbonSavings,
-          totalCost: route.totalCost,
-          steps: route.steps
          }})}
 
        underlayColor="#f0f0f0"
