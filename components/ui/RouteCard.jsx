@@ -2,7 +2,8 @@ import React from "react";
 import { TouchableHighlight, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import {router} from "expo-router";
+import { router } from "expo-router";
+import CarbonSave from "../carbonsave";
 
 const calculateEndTime = (startTime, totalTimeInMinutes) => {
   const [hours, minutes] = startTime.split(":").map(Number);
@@ -21,15 +22,17 @@ const RouteCard = ({ route, onPress, startTime = "11:30" }) => {
   return (
     <TouchableHighlight
       className="bg-white p-4 my-2 rounded-lg border shadow-sm border-gray-200"
-      onPress= {() => router.push({
-          pathname: "/mapscreen", 
+      onPress={() =>
+        router.push({
+          pathname: "/mapscreen",
           params: {
-          id: route.id,
-          name: route.name,
-          description: route.description,
-         }})}
-
-       underlayColor="#f0f0f0"
+            id: route.id,
+            name: route.name,
+            description: route.description,
+          },
+        })
+      }
+      underlayColor="#f0f0f0"
     >
       <>
         {/* Steps Section */}
@@ -76,12 +79,16 @@ const RouteCard = ({ route, onPress, startTime = "11:30" }) => {
           {/* Divider Line */}
           <View className="border-b border-gray-200 my-3" />
 
-          {/* Fare Section */}
+          {/* Fare and Carbon Save Section */}
           <View className="flex-row items-center justify-between">
-            <Text className="text-sm font-medium text-gray-600">Fare</Text>
-            <Text className="text-emerald-700 font-bold text-lg">
-              ₹{route.totalCost}
-            </Text>
+            <View>
+              <Text className="text-sm font-medium text-gray-600">Fare</Text>
+              <Text className="text-emerald-700 font-bold text-lg">
+                ₹{route.totalCost}
+              </Text>
+            </View>
+            {/* Carbon Save Component */}
+            <CarbonSave value={route.carbonSavings} />
           </View>
         </View>
       </>
