@@ -6,11 +6,13 @@ import {
   TouchableOpacity,
   TouchableHighlight
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
+import * as Location from 'expo-location';
+import { use } from "react";
 
 
 const INITIAL_REGION = {
@@ -110,20 +112,44 @@ const MINIMAL_MAP_STYLE = [
 ];
 
 const Travel = () => {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
   const navigation = useNavigation();
   const [fromLocation, setFromLocation] = useState("");
   const [toLocation, setToLocation] = useState("");
 
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    });
+  }, []);
+
+  let text = 'Waiting..';
+  if (errorMsg) {
+    text = errorMsg;
+  }
+  else if (location) {
+    text = JSON.stringify(location);
+  }
+
   return (
     <SafeAreaView className="flex-1 bg-background">
+      {console.log(text)}
       <View style={StyleSheet.absoluteFill}>
         {/* MapView remains in the background */}
         <MapView
           style={StyleSheet.absoluteFill}
           // provider={PROVIDER_GOOGLE}
           initialRegion={INITIAL_REGION}
-          showsUserLocation
-          showsMyLocationButton
+          showsUserLocation = {true}
+          showsMyLocationButton = {true}
           customMapStyle={MINIMAL_MAP_STYLE}
         />
         {/* Foreground View */}

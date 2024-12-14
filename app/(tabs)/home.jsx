@@ -185,41 +185,49 @@ const Home = () => {
                 </View>
               )}
               {index === 4 && (
-                /*Carousel Section*/ <View className="mt-8">
+                /*Carousel Section*/
+                <View className="mt-8 mb-8">
+                  <Text className="text-xl font-psemibold mb-3 text-gray-800">
+                    Insights
+                  </Text>
                   <FlatList
                     ref={carouselRef}
                     data={carouselData}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={(item) => item.id}
-                    snapToAlignment="start" // Fix snap to start for first item
-                    snapToInterval={width * 0.9 + 16} // Card width + spacing (16 is the margin)
+                    snapToAlignment="center"
+                    snapToInterval={width * 0.9 + 16} // Card width + spacing
                     decelerationRate="fast"
                     renderItem={({ item }) => (
                       <View
-                        className="bg-green-50 rounded-lg p-5 mx-2 items-center shadow"
+                        className="bg-gray-100 rounded-xl p-5 mx-2 items-start shadow-md shadow-gray-400"
                         style={{ width: width * 0.9 }}
                       >
-                        <FontAwesome5
-                          name={item.icon}
-                          size={48}
-                          color="#10B981"
-                        />
-                        <Text className="mt-3 text-lg text-gray-900 font-pmedium">
-                          {item.title}
-                        </Text>
-                        <Text className="mt-2 text-sm text-gray-500 text-center font-pregular">
+                        <View className="flex-row items-center mb-4">
+                          <FontAwesome5
+                            name={item.icon}
+                            size={36}
+                            color="#065f46"
+                          />
+                          <Text className="ml-3 text-lg font-psemibold text-gray-800">
+                            {item.title}
+                          </Text>
+                        </View>
+
+                        <Text className="text-base text-gray-600 mb-5 font-pregular">
                           {item.description}
                         </Text>
-                        <TouchableOpacity className="mt-4 bg-green-600 rounded-full py-2 px-5">
-                          <Text className="text-white font-psemibold">
+
+                        <TouchableOpacity className="self-end bg-emerald-700 rounded-full py-2 px-6">
+                          <Text className="text-white font-psemibold text-sm">
                             {item.buttonText}
                           </Text>
                         </TouchableOpacity>
                       </View>
                     )}
                     contentContainerStyle={{
-                      paddingHorizontal: 0, // Ensure no padding at the start
+                      paddingHorizontal: 8, // Adds slight padding on the sides
                     }}
                   />
                 </View>
