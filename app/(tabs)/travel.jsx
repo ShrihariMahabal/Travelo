@@ -10,6 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons } from "@expo/vector-icons";
 import uuid from "react-native-uuid";
 import axios from "axios";
+import { router } from "expo-router";
 
 const debounce = (func, delay) => {
   let timer;
@@ -56,7 +57,6 @@ const Travel = () => {
     }
   };
 
-  // Debounced version of the fetchSuggestions function
   const debouncedFetchSuggestions = useCallback(
     debounce(fetchSuggestions, 300),
     []
@@ -176,26 +176,26 @@ const Travel = () => {
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() => handleSelectSuggestion(item.description)}
-                className="flex-row items-center bg-white shadow-sm rounded-lg px-4 mx-1 mb-2 h-16" // Uniform height and margin for each item
+                className="flex-row items-center bg-white shadow-sm rounded-lg px-4 mx-1 mb-2 h-16"
               >
                 <MaterialIcons name="place" size={24} color="#065f46" />
                 <View className="ml-4 flex-1 justify-center space-y-1">
                   <Text
                     className="font-medium text-gray-900 text-base truncate"
-                    numberOfLines={1} // Truncate text after one line
+                    numberOfLines={1}
                   >
                     {item.description}
                   </Text>
                   <Text
                     className="text-gray-500 text-sm truncate"
-                    numberOfLines={1} // Truncate text after one line
+                    numberOfLines={1}
                   >
                     {item.structured_formatting?.secondary_text}
                   </Text>
                 </View>
               </TouchableOpacity>
             )}
-            contentContainerStyle={{ paddingBottom: 64 }} // Padding to prevent hiding behind navbar
+            contentContainerStyle={{ paddingBottom: 64 }}
             showsVerticalScrollIndicator={false}
           />
         </View>
@@ -206,6 +206,17 @@ const Travel = () => {
           </Text>
         </View>
       )}
+
+      {/* Navigate Button */}
+      <TouchableOpacity
+        className="absolute bottom-[6.5rem] left-4 right-4 bg-emerald-800 rounded-full py-3 shadow-lg"
+        onPress={() => router.push("/routescreen")}
+        style={{ zIndex: 10 }}
+      >
+        <Text className="text-white text-center font-bold text-lg">
+          Find Routes
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
